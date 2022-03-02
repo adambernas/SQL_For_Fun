@@ -3,7 +3,8 @@
 --Update: 21-10-2021
 --Wersja: 1.1
 
-/*
+/*Skrót do obs³ugi procedury
+
 exec CalculatingFactorial
 @Number = " tu wprowadŸ liczbe ca³kowit¹"
 */

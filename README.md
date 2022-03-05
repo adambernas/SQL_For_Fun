@@ -1,9 +1,5 @@
 ﻿# SQL_For_Fun
 
-Witaj w moim repozytorium :)
-Cieszę się że zainteresowałeś się moim projektem.
-Poniżej przedstawiam krótki opis który pozwoli Ci się z nim zapoznać.  Zapraszam 
-
 Projekt: SQL FOR FUN
 
 W tej części zamieszczam luźne projekty napisane w języku T-SQL

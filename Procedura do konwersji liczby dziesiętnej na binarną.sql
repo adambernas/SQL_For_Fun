@@ -1,21 +1,21 @@
---Tytu³: Procedura konwertuje liczbê dziesiêtn¹ do systemu dwójkowego (binarnego)
---Autor: Adam Bernaœ
+ï»¿--TytuÅ‚: Procedura konwertuje liczbÄ™ dziesiÄ™tnÄ… do systemu dwÃ³jkowego (binarnego)
+--Autor: Adam BernaÅ›
 --Update: 28-03-2022
 --Wersja: 1.1
 
-/*Skrót do obs³ugi procedury
+/*SkrÃ³t do obsÅ‚ugi procedury
 
 exec ConverterDecimalToBinary
-@number = "WprowadŸ liczbê ca³kowit¹"
+@number = "WprowadÅº liczbÄ™ caÅ‚kowitÄ…"
 */
 
---SprawdŸ czy procedura istnieje, je¿eli tak usuñ j¹
+--SprawdÅº czy procedura istnieje, jeÅ¼eli tak usuÅ„ jÄ…
 IF OBJECT_ID('ConverterDecimalToBinary') IS NOT NULL DROP PROC ConverterDecimalToBinary
 GO
 
 CREATE PROC ConverterDecimalToBinary
 
-@number DECIMAL(38,0) = 999999
+@number DECIMAL(38,0) = NULL
 
 AS
 
@@ -23,14 +23,13 @@ DECLARE @mod DECIMAL(38,0);
 	SET @mod = @number % 2;
 DECLARE @i DECIMAL(38,0);
 	SET @i = @number;
-
 DECLARE @Tab TABLE(id BIGINT IDENTITY, n DECIMAL(38,0))
 
 IF	@number IS NULL 
 	OR @number = 0
 	OR @number < 0
 		BEGIN
-			PRINT 'Podaj dodatni¹ liczbê'
+			PRINT 'Podaj dodatniÄ… liczbÄ™'
 			RETURN
 		END
 SET NOCOUNT ON
@@ -48,7 +47,6 @@ BEGIN
 	DECLARE @txt varchar(max);
 	DECLARE @priv_txt varchar(max);
 	DECLARE @start INT = 0;
-		
 	DECLARE Kursor CURSOR FOR
 
 	SELECT CAST(n as varchar(max)) FROM @Tab
@@ -70,7 +68,7 @@ BEGIN
 	DEALLOCATE Kursor;
 END
 
-PRINT 'Wprowadzona liczba w systemie dziesiêtnym:' + char(10) + char(10 ) + CAST(@number as varchar(max)) + char(10) + char(10) + 
-	  'Konwersja na sytem binarny (dwójkowy): ' + char(10) + char(10) + @priv_txt + char(10)
+PRINT 'Wprowadzona liczba w systemie dziesiÄ™tnym:' + char(10) + char(10 ) + CAST(@number as varchar(max)) + char(10) + char(10) + 
+	  'Konwersja na sytem binarny (dwÃ³jkowy): ' + char(10) + char(10) + @priv_txt + char(10)
 
-PRINT 'Liczba znaków ci¹gu binarnego: ' + CAST(LEN(@priv_txt) as varchar(200))
+PRINT 'Liczba znakÃ³w ciÄ…gu binarnego: ' + CAST(LEN(@priv_txt) as varchar(200))

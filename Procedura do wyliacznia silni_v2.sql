@@ -1,6 +1,6 @@
 ﻿--Tytuł: Procedura do wylicznia silni liczby całkowitej
 --Autor: Adam Bernaś
---Update: 08-01-2022
+--Update: 08-01-2023
 --Wersja: 2.0
 --Opis: Nowa wersja procedury do wyliczenia silni, ciało bardziej zoptymalizowane i uproszczone, wykorzystuje jedną pętle zamiast kursora z wersji poprzedniej
 

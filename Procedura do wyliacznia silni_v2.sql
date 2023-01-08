@@ -6,8 +6,8 @@
 
 /*Skrót do obsługi procedury
 
-exec CalculatingFactorial
-@Number = " tu wprowadź liczbe całkowitą"
+exec CalculatingFactorial_v2 
+@Number = "tu wprowadź liczbe całkowitą"
 */
 
 --Sprawdź czy procedura istnieje, jeżeli tak usuń ją
